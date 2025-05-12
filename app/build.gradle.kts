@@ -4,18 +4,27 @@ plugins {
     alias(libs.plugins.kotlin.compose)
 }
 
+// プロパティ定義
+val signalingEndpoint = project.findProperty("signaling_endpoint") as? String ?: error("signaling_endpoint is not defined")
+val channelId = project.findProperty("channel_id") as? String ?: error("channel_id is not defined")
+val signalingMetadata = project.findProperty("signaling_metadata") as? String ?: error("signaling_metadata is not defined")
+
 android {
-    namespace = "info.tsurutatakumi.tutorial"
+    namespace = "info.tsurutatakumi.messagingsample"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "info.tsurutatakumi.tutorial"
+        applicationId = "info.tsurutatakumi.messagingsample"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "SIGNALING_ENDPOINT", "\"$signalingEndpoint\"")
+        buildConfigField("String", "CHANNEL_ID", "\"$channelId\"")
+        buildConfigField("String", "SIGNALING_METADATA", "\"${signalingMetadata}\"")
     }
 
     buildTypes {
@@ -36,6 +45,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 }
 
@@ -47,6 +57,7 @@ dependencies {
         }
         isTransitive = true
     }
+    implementation(libs.gson)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

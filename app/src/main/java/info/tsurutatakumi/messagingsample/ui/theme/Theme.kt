@@ -1,6 +1,5 @@
-package info.tsurutatakumi.tutorial.ui.theme
+package info.tsurutatakumi.messagingsample.ui.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme

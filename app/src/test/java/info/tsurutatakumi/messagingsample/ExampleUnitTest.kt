@@ -1,4 +1,4 @@
-package info.tsurutatakumi.tutorial
+package info.tsurutatakumi.messagingsample
 
 import org.junit.Test
 

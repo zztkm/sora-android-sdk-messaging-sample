@@ -9,9 +9,11 @@ lifecycleRuntimeKtx = "2.8.7"
 activityCompose = "1.10.1"
 composeBom = "2024.04.01"
 sora_sdk = "2025.1.0" # https://github.com/shiguredo/sora-android-sdk/releases
+gsonVersion = "2.11.0"
 
 [libraries]
 sora-android-sdk = { module = "com.github.shiguredo:sora-android-sdk", version.ref = "sora_sdk" }
+gson = { group = "com.google.code.gson", name = "gson", version.ref = "gsonVersion" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }

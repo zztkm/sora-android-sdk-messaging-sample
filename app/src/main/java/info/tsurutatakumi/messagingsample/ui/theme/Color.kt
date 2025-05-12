@@ -1,4 +1,4 @@
-package info.tsurutatakumi.tutorial.ui.theme
+package info.tsurutatakumi.messagingsample.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

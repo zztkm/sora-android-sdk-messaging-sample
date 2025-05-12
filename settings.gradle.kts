@@ -16,10 +16,11 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        // Sora Android SDK が JitPack で提供されているため追加
         maven { url = uri("https://jitpack.io") }
     }
 }
 
-rootProject.name = "tutorial"
+rootProject.name = "sora-android-sdk-sample"
 include(":app")
  
